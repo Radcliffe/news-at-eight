@@ -5,16 +5,18 @@ $( document ).ready(function () {
   var answerElement = $('#answer');
   var textbox = $('.textbox');
   var eball = $('.eball');
+  var oldtext = '';
 
   eball.mouseenter ( function(){
     var text = textArea.val().trim();
-    if (text) {
-      $.post( "topic", { text: text })
-      .done(function( data ) {
-        textbox.html(data.category)
-      });
-    } else {
+    if (text == '') {
       textbox.html('');
+    } else if (text != oldtext) {
+      $.post( "topic", { text: text })
+      .done(function(data) {
+        textbox.html(data.category);
+        oldtext = text;
+      });
     }
   });
 });
