@@ -13,6 +13,8 @@ $( document ).ready(function () {
       .done(function( data ) {
         textbox.html(data.category)
       });
+    } else {
+      textbox.html('');
     }
   });
 });
