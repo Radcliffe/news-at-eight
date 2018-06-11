@@ -1,0 +1,4 @@
+Flask==0.12.2
+Jinja2==2.10
+gunicorn==19.8.1
+git+git://github.com/facebookresearch/fastText.git
