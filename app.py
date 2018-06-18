@@ -5,7 +5,7 @@ from flask import jsonify
 from fastText import load_model
 
 app = Flask(__name__, static_url_path='/static')
-model = load_model('ag-model.ftz')
+model = load_model('agnews.ftz')
 
 @app.route('/topic', methods=['POST'])
 def predict_topic():

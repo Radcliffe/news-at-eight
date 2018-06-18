@@ -12,6 +12,7 @@ $( document ).ready(function () {
     if (text == '') {
       textbox.html('');
     } else if (text != oldtext) {
+      textbox.html('');
       $.post( "topic", { text: text })
       .done(function(data) {
         textbox.html(data.category);
