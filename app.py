@@ -2,7 +2,7 @@ from flask import Flask
 from flask import render_template
 from flask import request
 from flask import jsonify
-from fastText import load_model
+from fasttext import load_model
 
 
 app = Flask(__name__, static_url_path='/static')
