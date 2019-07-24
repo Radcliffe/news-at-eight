@@ -4,6 +4,7 @@ from flask import request
 from flask import jsonify
 from fastText import load_model
 
+
 app = Flask(__name__, static_url_path='/static')
 model = load_model('agnews.ftz')
 
