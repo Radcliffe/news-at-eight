@@ -1,36 +1,18 @@
-# Python: Getting Started
+# News at Eight
 
-A barebones Django app, which can easily be deployed to Heroku.
+This is a simple Flask application that demonstrates topic modeling. It attempts to guess the category of a news article,
+such as World, Business, or Sports, from the headline or a few lines of text. It has been deployed to Heroku at
+https://news-at-eight.herokuapp.com.
 
-This application supports the [Getting Started with Python on Heroku](https://devcenter.heroku.com/articles/getting-started-with-python) article - check it out.
+The training data is from the [AG News Corpus](http://www.di.unipi.it/~gulli/AG_corpus_of_news_articles.html).
 
-## Running Locally
-
-Make sure you have Python [installed properly](http://install.python-guide.org). Also, install the [Heroku CLI](https://devcenter.heroku.com/articles/heroku-cli) and [Postgres](https://devcenter.heroku.com/articles/heroku-postgresql#local-setup).
-
-```sh
-$ git clone git@github.com:heroku/python-getting-started.git
-$ cd python-getting-started
-
-$ pipenv install
-
-$ createdb python_getting_started
-
-$ python manage.py migrate
-$ python manage.py collectstatic
-
-$ heroku local
-```
-
-Your app should now be running on [localhost:5000](http://localhost:5000/).
+The model was build using [fastText](http://www.di.unipi.it/~gulli/AG_corpus_of_news_articles.html) from Facebook Research.
 
 ## Deploying to Heroku
 
 ```sh
 $ heroku create
 $ git push heroku master
-
-$ heroku run python manage.py migrate
 $ heroku open
 ```
 or
@@ -42,3 +24,13 @@ or
 For more information about using Python on Heroku, see these Dev Center articles:
 
 - [Python on Heroku](https://devcenter.heroku.com/categories/python)
+
+## License
+
+Copyright 2019 David Radcliffe (dradcliffe@gmail.com)
+
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
